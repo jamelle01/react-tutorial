@@ -61,4 +61,44 @@
   font-size: 110%;
   text-align: justify;
 }
+.create h2{
+  text-align: center;
+  color:#f1356d;
+}
+input, textarea, select{
+  width: 100%;
+  font-size: 1.2vw;
+  padding: 10px;
+  border-radius: 35px;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+label{
+  text-align: left;
+  display: block;
+}
+textarea{
+  max-height: 200px;
+  min-height: 200px;
+}
+form{
+  margin: 0 auto;
+  font-size: 1.2vw;
+  padding: 10px;
+  width: 100%;
+}
+.create{
+  max-width: 50vw;
+  text-align: center;
+  margin: 0 auto;
+}
+.create button{
+  margin-top: 20px;
+  width: 100px;
+  color: white;
+  background-color: #f1356d;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 

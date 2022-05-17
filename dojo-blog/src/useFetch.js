@@ -13,11 +13,11 @@ const useFetch = (url) => {
         if (!res.ok) { // error coming back from server
           throw Error('could not fetch the data for that resource');
         } 
-        return res.json();
+        return res.json(); /// this passes the json into a javascript object for us
       })
-      .then(data => {
+      .then(data => {  /// the parameter is the actuall data that the res.json() return
         setIsPending(false);
-        setData(data);
+        setData(data);  /// place the returned response to the variable
         setError(null);
       })
       .catch(err => {
