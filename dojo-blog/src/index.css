@@ -58,7 +58,7 @@
 .blog-details div{
   margin: 1vw 0;
   line-height: 1.5em;
-  font-size: 110%;
+  font-size: 20px;
   text-align: justify;
 }
 .create h2{
@@ -67,7 +67,7 @@
 }
 input, textarea, select{
   width: 100%;
-  font-size: 1.2vw;
+  font-size: 24px;
   padding: 10px;
   border-radius: 35px;
   box-sizing: border-box;
@@ -83,7 +83,7 @@ textarea{
 }
 form{
   margin: 0 auto;
-  font-size: 1.2vw;
+  font-size: 24px;
   padding: 10px;
   width: 100%;
 }
@@ -92,13 +92,13 @@ form{
   text-align: center;
   margin: 0 auto;
 }
-.create button{
+.create button, .blog-details button{
+  font-size: 18px;
   margin-top: 20px;
-  width: 100px;
   color: white;
   background-color: #f1356d;
+  border-radius: 8px;
   padding: 10px;
-  border-radius: 5px;
 }
 
 

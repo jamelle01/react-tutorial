@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState } from "react"; // hook
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('luigi');
+  const [isPending, setIsPending] = useState(false);
+  const history = useHistory(); // use to go back to history
 
   const handleSubmit = e => {
-    e.preventDefault();
-    const blog = {title, body, author};
+      e.preventDefault(); 
+      const blog = {title, body, author};
+        
+      setIsPending(true);
 
-    console.log(blog);
+      fetch('http://localhost:8000/blogs', {
+        method: 'POST', /// post reques
+        headers: {'Content-Type': 'application/json'}, ///telling the server the type of content we're sending
+        body: JSON.stringify(blog)  /// body the actual data we're sending
+      }).then(() => {
+        console.log('new blog has been added');
+        setIsPending(false);
+        history.push('/'); /// after we added the data we go back 
+      })    
   }
 
   return (
@@ -39,8 +52,8 @@ const Create = () => {
           <option value="mario">Mario</option>
           <option value="luigi">Luigi</option>
         </select>
-
-        <button >Add Blog</button>
+        {!isPending && <button >Add Blog</button>}
+        {isPending && <button disabled>Adding Blog...</button>}
         <p>{title}</p>
         <p>{body}</p>
         <p>{author}</p>
