@@ -31,7 +31,6 @@ const useFetch = (url) => { /// custom in react needs to start with "use" otherw
         }
       })
     }, 100);
-
     return () => abortCont.abort(); /// pause/ abort the fetch when the second argument occurred
   }, [url]) /// I used url as dependencies so that whenever inside the url changes it rerun to get the data
 
