@@ -26,7 +26,7 @@ const useFetch = (url) => { /// custom in react needs to start with "use" otherw
         if(err.name === 'AbortError'){ /// if the abort occurred it won't update the states
           console.log('fetch aborted');
         }else{
-          setIsPending(false);
+          setIsPending(false);//for animation
           setError(err.message);
         }
       })
